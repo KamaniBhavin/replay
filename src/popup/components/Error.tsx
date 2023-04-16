@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react';
+import Layout from './Layout';
 
-
+// Error component
 const Error: React.FC = () => {
-    return <div className="text-2xl text-center">
-        <div className="text-red-500">Error!</div>
-        <div className="text-gray-500">Something went wrong. Please try again.</div>
-    </div>
-}
+  return (
+    <Layout>
+      <div className="mt-8 text-2xl font-bold text-gray-300">Something went wrong</div>
+      <div className="mt-4 text-sm text-gray-500">Please try again later</div>
+    </Layout>
+  );
+};
 
-export default Error
+export default Error;

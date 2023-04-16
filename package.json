@@ -1,0 +1,51 @@
+{
+  "name": "replay",
+  "version": "1.0.0",
+  "description": "Spotlight for your browser history",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --env mode=dev outputPath=dev --watch",
+    "build": "webpack --env mode=prod outputPath=dist",
+    "supabase-types": "npx supabase gen types typescript --project-id ndsjcwugujvrwkxhlzpe --schema public > supabase/database.ts",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "browser",
+    "history",
+    "spotlight",
+    "search",
+    "chrome",
+    "supabase",
+    "openai"
+  ],
+  "author": "Bhavin Kamani",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.20.0",
+    "openai": "^3.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.231",
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.2.4",
+    "postcss-preset-env": "^8.3.1",
+    "prettier": "^2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "style-loader": "^3.3.2",
+    "tailwindcss": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

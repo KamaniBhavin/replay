@@ -3,30 +3,27 @@
   "name": "Replay",
   "author": "Bhavin Kamani",
   "version": "0.0.1",
-  "description": "Replay is a browser extension that lets you search your web browsing history. It's like Spotlight for your browser.",
+  "description": "Spotlight for your browser history",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAotSX29Wp4q5TmPsjaLCu4hpRUzLk2a+C7/u1cpCaPNQg2m+h5+rnIdvUGq10TUWoLg/+AkR4P1F8Wffi9jHGK11iSo8TVFCinnv1qt9iyuktRJV+5ZGJ+7hXKN79lkxUEmtgq5QxgOXctVQHUGYjsLEepr/BuDjORZYdHenEDoSeFLWCxuHNMCVAQN7jZovrbgLHgknTS3waq8DDD0DQnU8j+2cRWifRbYbtWt02zBhqmu4SZjs33BtHMvfi9yWVjqnTxgTtLvf+wu34pbyoOeatcdM2wVIhRzPAYEj8sImjGswQR7gsmwPYxtMRdeVUeYVVi7L9CI6j8eggB8s57wIDAQAB",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "64": "icons/icon-64.png",
-    "128": "icons/icon-128.png",
-    "196": "icons/icon-196.png",
-    "256": "icons/icon-256.png"
+    "128": "icons/icon-120.png",
+    "196": "icons/icon-192.png",
+    "256": "icons/icon-512.png"
   },
   "action": {
-    "default_title": "Ghost Reader",
+    "default_title": "Replay",
     "default_popup": "popup.html",
     "icons": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
-      "48": "icons/icon-48.png",
-      "64": "icons/icon-64.png",
-      "128": "icons/icon-128.png",
-      "196": "icons/icon-196.png",
-      "256": "icons/icon-256.png"
+      "128": "icons/icon-120.png",
+      "196": "icons/icon-192.png",
+      "256": "icons/icon-512.png"
     }
   },
-  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "permissions": ["storage", "tabs", "activeTab", "scripting", "identity"],
   "commands": {
     "spotlight": {
       "suggested_key": {
@@ -42,7 +39,37 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["spotlight.js", "extractor.js"]
+      "js": ["spotlight.js", "extractor.js"],
+      "exclude_matches": [
+        "https://*.google.com/*",
+        "https://*.youtube.com/*",
+        "https://*.facebook.com/*",
+        "https://*.twitter.com/*",
+        "https://*.reddit.com/*",
+        "https://*.yahoo.com/*",
+        "https://*.bing.com/*",
+        "https://*.wikipedia.org/*",
+        "https://*.amazon.com/*",
+        "https://*.ebay.com/*",
+        "https://*.quora.com/*",
+        "https://*.instagram.com/*",
+        "https://*.pinterest.com/*",
+        "https://*.linkedin.com/*",
+        "https://*.tumblr.com/*",
+        "https://*.wordpress.com/*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon-16.png",
+        "icons/icon-32.png",
+        "icons/icon-120.png",
+        "icons/icon-192.png",
+        "icons/icon-512.png"
+      ],
+      "matches": ["<all_urls>"]
     }
   ]
 }
