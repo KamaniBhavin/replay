@@ -6,6 +6,10 @@ Replay is a chrome extension that lets you search through all the pages in your 
 
 To install Replay, you will need to follow these steps:
 
+Either use a pre-built extension from the source code named `dist.zip`
+
+or
+
 1. Clone the repository from Github using the following command:
 
 ```bash
